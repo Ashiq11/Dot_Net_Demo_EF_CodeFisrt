@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home - Project Demo</title>
+</head>
+<body>
+    <div>
+        <h2>Home Page</h2>
+        <br/>
+        @Html.ActionLink("Departments", "Index", "Department") | 
+        @Html.ActionLink("Employees", "Index", "Employee")
+
+        <!-- Equivalent anchor tags -->
+        <!--
+            <a href="/Department/Index">Departments</a> | 
+            <a href="/Employee/Index">Employees</a>
+        -->
+
+    </div>
+</body>
+</html>

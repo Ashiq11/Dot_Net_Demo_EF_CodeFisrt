@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DataLayer.Department>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Department List - Project Demo</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create") | 
+
+        <!-- Manually inserted an additional link to back to Home page-->
+        @Html.ActionLink("Back to Home", "Index", "Home")
+
+    </p>
+    <table class="table" cellpadding="3" cellspacing="5">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
